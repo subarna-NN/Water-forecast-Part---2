@@ -1,0 +1,23 @@
+Device:cuda | TEST official weeks | seeds=5 | CQR_COVER=0.91
+  Naive-4wk done
+  XGBoost done
+  LSTM-point done
+  CGPF-noCons done
+  CGPF done
+
+=== PHASE B: official-week comparison (mean over 4 weeks x 10 DMAs) ===
+                PI1     PI2     PI3   COV90    MPIW  Pinball  Winkler
+Method                                                               
+Naive-4wk    1.3861  1.4146  5.1634     NaN     NaN      NaN      NaN
+XGBoost      1.2441  1.2344  4.4711     NaN     NaN      NaN      NaN
+LSTM-point   1.7748  1.9630  5.4485     NaN     NaN      NaN      NaN
+CGPF-noCons  1.7414  1.8995  5.5139  0.8924  7.2911   0.6397   9.4198
+CGPF         1.6402  1.9152  5.1136  0.8937  7.5049   0.6387   9.5025
+
+=== B2: paired Wilcoxon tests (per-DMA-week) ===
+  CGPF vs Naive-4wk   PI1: mean diff=+0.254 (neg=CGPF better)  p=0.0037
+  CGPF vs XGBoost     PI1: mean diff=+0.396 (neg=CGPF better)  p=0.0000
+  CGPF vs LSTM-point  PI1: mean diff=-0.135 (neg=CGPF better)  p=0.0514
+  CGPF vs CGPF-noCons Winkler: mean diff=+0.083 (neg=constraints better)  p=0.6463
+
+Saved -> /content/phaseB_*.csv   (2645s) 
