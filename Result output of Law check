@@ -1,0 +1,34 @@
+Training rows: 19007 of 19679 | law: sigma^2 = a*mu^b + c
+
+=== Per-DMA fit  (NLS a,b,c  |  robust log-log exponent b_ll) ===
+           b      c     R2   b_ll  R2_ll    n
+DMA                                          
+DMA A  3.000  2.500  0.146  0.198  0.011  168
+DMA B  3.000  0.000  0.340  4.387  0.554  168
+DMA C  2.590  0.286  0.319  1.682  0.387  168
+DMA D  0.513  0.000  0.061  0.533  0.096  168
+DMA E  1.029  0.000  0.019  0.642  0.027  168
+DMA F  1.159  0.000  0.488  1.165  0.493  168
+DMA G  0.000  9.186 -0.000 -1.002  0.111  168
+DMA H  0.277  0.000  0.009  1.119  0.250  168
+DMA I  3.000  2.949  0.645  1.844  0.599  168
+DMA J  1.596  0.000  0.163  1.646  0.274  168
+
+log-log exponent b_ll across DMAs: mean=1.221 std=1.399 (per-DMA mu-range is narrow -> within-DMA fit is noisy/ill-posed)
+
+=== Pooled fit (all DMAs, wide mu range) ===
+NLS  : a=0.1840(+/-0.1810)  b=1.1340(+/-0.2150)  c=1.1371(+/-1.6999)  R2=0.251
+log-log: b=0.9451  a=0.3352  R2=0.606   (b~1 => Poisson-like var proportional to mean)
+
+=== Cross-DMA Taylor law (10 zones, overall mean vs variance) ===
+b=1.594  R2=0.908  (strong across zones)
+
+=== Seasonal stability (pooled fit per season) ===
+         b_ll   a_ll  R2_ll     n
+season                           
+DJF     1.335  0.068  0.762  1680
+MAM     1.066  0.167  0.606  1680
+JJA     0.751  0.337  0.417  1680
+SON     1.119  0.148  0.615  1680
+
+log-log exponent b across seasons: mean=1.068  std=0.241  (b stays ~1; fit weakest in summer JJA where weather breaks the scaling)
