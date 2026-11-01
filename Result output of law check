@@ -1,0 +1,25 @@
+Device:cuda | TEST weeks | seeds=3 | CQR_COVER=0.91
+  QR          PI1=1.735 COV90=0.666 Winkler=13.367   [550s]
+  CQR         PI1=1.735 COV90=0.875 Winkler=9.594   [1083s]
+  Gaussian    PI1=2.052 COV90=0.872 Winkler=11.117   [1266s]
+  MC-Dropout  PI1=1.747 COV90=0.886 Winkler=9.752   [1657s]
+  DeepAR      PI1=1.712 COV90=0.880 Winkler=10.173   [1939s]
+  CGPF        PI1=1.775 COV90=0.877 Winkler=9.882   [2421s]
+
+=== PHASE C: fair UQ benchmark (all conformalised, fixed pipeline) ===
+               PI1   COV90    MPIW  Pinball  Winkler
+QR          1.7352  0.6662  4.9484   0.6399  13.3675
+CQR         1.7352  0.8746  7.1015   0.6399   9.5939
+Gaussian    2.0515  0.8720  8.6349   0.7831  11.1170
+MC-Dropout  1.7473  0.8855  7.3347   0.8572   9.7522
+DeepAR      1.7122  0.8799  7.6642   0.6604  10.1731
+CGPF        1.7747  0.8775  7.4387   0.6669   9.8824
+
+=== Wilcoxon (CGPF vs each, Winkler, per-DMA-week) ===
+  CGPF vs QR          Winkler diff=-3.485 (neg=CGPF better)  p=0.0003
+  CGPF vs CQR         Winkler diff=+0.289 (neg=CGPF better)  p=0.0725
+  CGPF vs Gaussian    Winkler diff=-1.235 (neg=CGPF better)  p=0.0000
+  CGPF vs MC-Dropout  Winkler diff=+0.130 (neg=CGPF better)  p=0.7547
+  CGPF vs DeepAR      Winkler diff=-0.291 (neg=CGPF better)  p=0.6085
+
+Saved -> /content/phaseC_*.csv   (2421s)
